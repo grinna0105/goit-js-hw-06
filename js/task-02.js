@@ -9,10 +9,12 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-for (const ingredient of ingredients) {
+const liEl = ingredients.map(ingredient => {
   const li = document.createElement("li");
-  li.textContent = ingredient;
-  list.append(li);
-}
+    li.textContent = ingredient;
+    list.append(li);
+}).join("");
+
+list.insertAdjacentHTML('afterbegin', liEl);
 
 console.log(ingredients);
